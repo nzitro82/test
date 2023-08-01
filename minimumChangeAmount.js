@@ -1,5 +1,5 @@
 function findMinimumAmount(numbers, targetSum, isRecursiveCall) {
-  
+
   if (!isRecursiveCall && !numbers.length) return 1;
 
   if(!numbers.length) return 0;
@@ -31,12 +31,14 @@ function findMinimumAmount(numbers, targetSum, isRecursiveCall) {
 
 const numbers = [5, 7, 1, 1, 2, 3, 22];
 //const numbers = [1, 2, 5]
+//const numbers = [1, 2, 4, 5]
 //const numbers = []
 
 let targetSum = 0;
 let result = -1;
+const maxNum = numbers[numbers.length - 1] || 0
 
-while (result < 0) {
+while (result < 0 && targetSum <= maxNum) {
   targetSum++;
   result = findMinimumAmount(numbers, targetSum);
 }
